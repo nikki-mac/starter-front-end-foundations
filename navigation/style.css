@@ -1,3 +1,82 @@
 body {
   margin: 0;
 }
+
+header {
+  background-color: #000;
+  margin-bottom: 40px;
+}
+
+/* targets the title of the document */
+header h1 {
+  color: #fff;
+  text-align: center;
+  /*removes the default margin and spacing around the `h1` element */
+  margin: 0;
+  /* pushes the text down 20px from the top of the page */
+  padding-top: 20px;
+}
+
+/*targets the container for the navigation */
+header nav {
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul {
+  display: flex;
+  padding-left: 0;
+  /*removes bullet points from the list items */
+  list-style: none;
+}
+
+header nav ul li a {
+  color: #fff;
+  /*removes the underline from the link */
+  text-decoration: none;
+  /* applies 20px of margin to the right of each link
+  creating a visual gap between the nav links */
+  margin: 0 20px 0 0;
+}
+
+/*removes the margin to the right of the last anchor tag
+so that the nav appears center */
+header nav ul li:last-child a {
+  margin-right: 0;
+}
+
+/*when the browser is larger than 600px, 
+apply these rules */
+
+@media all and (min-width: 600px) {
+  header {
+    /*changes the default setting from `block` to `flex` */
+    display: flex;
+    /*pushes the items (titles and nav) to the far sides 
+    of the browser with space between them */
+    justify-content: space-between;
+    /*adds 0px padding top and bottom, and 30px padding 
+    left and right */
+    padding: 0 30px;
+  }
+
+  header h1 {
+    /*sets 14px of margin above and below the 
+  0px of margin to the left and right */
+    margin: 14px;
+    /*removes or sets 0px of padding above the `h1` */
+    padding-top: 0;
+  }
+
+  header nav {
+    /*pushes the nav container down by 8px to make it
+  present a little better visually within the space */
+    margin-top: 8px;
+  }
+
+  /*targets the change when a user hovers over a link 
+  in the header nav */
+  header nav ul li a:hover {
+    color: #bdbdbd;
+  }
+}
